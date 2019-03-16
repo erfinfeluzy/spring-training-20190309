@@ -67,7 +67,7 @@
           <span class="text-primary"></span>
         </h1>
         <div class="subheading mb-5">${user.status}
-          <a href="mailto:name@email.com">name@email.com</a>
+          <a href="mailto:${user.email}">${user.email}/a>
         </div>
         <p class="lead mb-5">${user.status}</p>
         <div class="social-icons">

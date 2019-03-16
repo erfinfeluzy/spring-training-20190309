@@ -35,4 +35,11 @@ public class TwitterUser {
 	@Temporal(TemporalType.DATE)
 	private Date birthdate;
 	
+	/**
+	 * ========= Mar 16 material
+	 */
+	
+	@Column(name = "email")
+	private String email;
+	
 }

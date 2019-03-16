@@ -23,7 +23,7 @@ public class UserPageController {
 		
 		model.addAttribute("user", userFromDB);
 		
-		return "bootstrap";
+		return "user-page";
 			
 	}
 	
