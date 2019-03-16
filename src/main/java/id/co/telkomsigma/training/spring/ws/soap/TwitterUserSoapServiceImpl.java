@@ -22,4 +22,10 @@ public class TwitterUserSoapServiceImpl implements TwitterUserSoapService {
 		return users;
 	}
 
+	@Override
+	public TwitterUser createNewTwitterUser(TwitterUser user) {
+		
+		return twitterUserRepository.save(user);
+	}
+
 }

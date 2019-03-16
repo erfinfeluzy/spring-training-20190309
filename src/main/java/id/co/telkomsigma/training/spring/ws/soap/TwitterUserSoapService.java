@@ -11,4 +11,6 @@ public interface TwitterUserSoapService {
 
 	List < TwitterUser > getAllTwiiterUsers();
 	
+	TwitterUser createNewTwitterUser(TwitterUser user);
+	
 }
