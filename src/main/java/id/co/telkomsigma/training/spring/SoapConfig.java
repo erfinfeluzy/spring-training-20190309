@@ -6,6 +6,7 @@ import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.feature.LoggingFeature;
 import org.apache.cxf.jaxws.EndpointImpl;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -52,6 +53,22 @@ public class SoapConfig {
 		endpoint.publish("/TwitterService2");
 		return endpoint;
 	}
+	
+	/** SOAP consumer **/
+	
+	@Bean(name = "client")
+	public TwitterUserSoapService customerServiceProxy() {
+	    return (TwitterUserSoapService) proxyFactoryBean().create();
+	}
+	
+	@Bean
+	public JaxWsProxyFactoryBean proxyFactoryBean() {
+	    JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean();
+	    proxyFactory.setServiceClass(TwitterUserSoapService.class);
+	    proxyFactory.setAddress("http://localhost:9000/soap/TwitterService");
+	    return proxyFactory;
+	}
+
 	
 	
 }
